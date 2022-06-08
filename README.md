@@ -1,1 +1,1 @@
-# CHef Buddy
+# Chef Buddy
