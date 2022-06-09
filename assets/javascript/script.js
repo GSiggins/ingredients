@@ -15,22 +15,39 @@ function searchClick (event) {
     var nutritionString = 'https://nutrition-by-api-ninjas.p.rapidapi.com/v1/nutrition?query=' + searchBarInput;
     console.log(nutritionString)
 
+    // recipeQuery(recipeString);
+    // nutrionalQuery(nutritionString);
+
+
+
+
+}
+
+
     function recipeQuery() {
-
         //fetch with built URL to return recipe info
-
+        fetch(recipeString)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          console.log(data)
         //return array of objects
-
+        })
     }
 
     function nutritionQuery() {
-
         //fetch built with URL to return nutritional info
-
+        fetch(nutritionString)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          console.log(data)
         //return one object
-
-    }
+    })
 }
+
 
 function displayRecipeResults (recipeArray) {
 
