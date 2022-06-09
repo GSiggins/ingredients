@@ -3,29 +3,43 @@ var searchFormEl = document.querySelector('#search-form');
 function searchClick () {
 
     //onclick event
-
     // build first url request
-    var queryString = './search-results.html?q=' + searchInputVal + '&format=';
 
+    // build second url request
+    // recipeQuery(recipeString);
+    // nutrionalQuery(nutritionString);
+    var queryString = './search-results.html?q=' + searchInputVal + '&format=';
     // build second url request
     var queryString = './search-results.html?q=' + searchInputVal + '&format=';
 
+
+}
+
+
     function recipeQuery() {
-
         //fetch with built URL to return recipe info
-
+        fetch(recipeString)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          console.log(data)
         //return array of objects
-
+        })
     }
 
     function nutritionQuery() {
-
         //fetch built with URL to return nutritional info
-
+        fetch(nutritionString)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          console.log(data)
         //return one object
-
-    }
+    })
 }
+
 
 function displayRecipeResults (recipeArray) {
 
