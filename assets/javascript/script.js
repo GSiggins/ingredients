@@ -7,11 +7,13 @@ function searchClick (event) {
     searchBarInput.addEventListener('click', searchBtn);
 
     // build first url request
-    https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=baked%20alaska
+    
     var recipeString = 'https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=' + searchBarInput;
+    console.log(recipeString)
 
     // build second url request
-    var nutritionString = './search-results.html?q=' + searchBarInput + '&format=';
+    var nutritionString = 'https://nutrition-by-api-ninjas.p.rapidapi.com/v1/nutrition?query=' + searchBarInput;
+    console.log(nutritionString)
 
     function recipeQuery() {
 
