@@ -88,10 +88,11 @@ function saveFavorites() {
     var input = document.querySelector('.search-input').value;
     localStorage.setItem('Favorites', input);
     console.log(input)
+    // document.querySelector('.search-input').value = localStorage.getItem('input');
     
     
 }
-
+searchBtn.addEventListener('click', saveFavorites);
 
 
 
