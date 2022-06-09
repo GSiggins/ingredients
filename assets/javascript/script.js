@@ -1,16 +1,24 @@
-var searchFormEl = document.querySelector('#search-form');
-
-function searchClick () {
+var searchBarInput = document.querySelector('#search-input');
+var searchBtn = document.querySelector('button')
+function searchClick (event) {
+    event.preventDefault();
 
     //onclick event
+    searchBarInput.addEventListener('click', searchBtn);
+
     // build first url request
+    
+    var recipeString = 'https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=' + searchBarInput;
+    console.log(recipeString)
 
     // build second url request
+    var nutritionString = 'https://nutrition-by-api-ninjas.p.rapidapi.com/v1/nutrition?query=' + searchBarInput;
+    console.log(nutritionString)
+
     // recipeQuery(recipeString);
     // nutrionalQuery(nutritionString);
-    var queryString = './search-results.html?q=' + searchInputVal + '&format=';
-    // build second url request
-    var queryString = './search-results.html?q=' + searchInputVal + '&format=';
+
+
 
 
 }
