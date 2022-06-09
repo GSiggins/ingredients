@@ -1,10 +1,17 @@
+var searchFormEl = document.querySelector('#search-form');
+
 function searchClick () {
 
     //onclick event
     // build first url request
+
     // build second url request
     // recipeQuery(recipeString);
     // nutrionalQuery(nutritionString);
+    var queryString = './search-results.html?q=' + searchInputVal + '&format=';
+    // build second url request
+    var queryString = './search-results.html?q=' + searchInputVal + '&format=';
+
 
 }
 
