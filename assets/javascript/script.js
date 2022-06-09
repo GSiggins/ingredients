@@ -84,6 +84,16 @@ function searchClick(event) {
 
 searchBtn.addEventListener('click', searchClick);
 
+function saveFavorites() {
+    var input = document.querySelector('.search-input').value;
+    localStorage.setItem('Favorites', input);
+    console.log(input)
+    
+    
+}
+
+
+
 
 // function displayRecipeResults(recipeArray) {
 
