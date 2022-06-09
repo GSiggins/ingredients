@@ -1,3 +1,21 @@
+const recipeApi = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
+		'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
+	}
+};
+
+const nutritionApi = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
+		'X-RapidAPI-Host': 'nutrition-by-api-ninjas.p.rapidapi.com'
+	}
+};
+
+
+
 var searchBarInput = document.querySelector('#search-input');
 var searchBtn = document.querySelector('button')
 function searchClick (event) {
