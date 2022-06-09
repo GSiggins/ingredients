@@ -138,3 +138,7 @@ body{
   }
   }
   
+  li:hover{
+    color: bisque;
+  }
+  
