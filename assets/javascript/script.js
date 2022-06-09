@@ -1,3 +1,5 @@
+var searchBtn = document.querySelector('.search-btn')
+
 const recipeApi = {
 	method: 'GET',
 	headers: {
@@ -17,10 +19,9 @@ const nutritionApi = {
 // var userText = searchBarInput.text;
 // console.log(userText)
 
-var searchBtn = document.querySelector('button')
 function searchClick(event) {
     event.preventDefault();
-    var searchBarInput = document.getElementById('search-input').value;
+    var searchBarInput = document.querySelector('.search-input').value;
     console.log(searchBarInput)
     //onclick event
     // build first url request
@@ -82,6 +83,7 @@ function searchClick(event) {
 }
 
 searchBtn.addEventListener('click', searchClick);
+
 
 // function displayRecipeResults(recipeArray) {
 
