@@ -1,4 +1,7 @@
 var searchBtn = document.querySelector('.search-btn')
+var landingSearch = document.getElementById('landing-search')
+var resultsSearch = document.getElementById('results-search')
+
 
 const recipeApi = {
 	method: 'GET',
@@ -23,22 +26,17 @@ function searchClick(event) {
     event.preventDefault();
     var searchBarInput = document.querySelector('.search-input').value;
     console.log(searchBarInput)
-    //onclick event
     // build first url request
-
     var recipeString = 'https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=' + searchBarInput;
     console.log(recipeString)
-
     // build second url request
     var nutritionString = 'https://nutrition-by-api-ninjas.p.rapidapi.com/v1/nutrition?query=' + searchBarInput;
     console.log(nutritionString)
-
-
     // Call fetch functions
     recipeQuery(recipeString);
     nutritionQuery(nutritionString);
-
-
+    console.log(location)
+    //window.location.href = 'results-page.html';
     // return variables to use in fetch functions
     return nutritionString, recipeString;
 }
@@ -84,6 +82,8 @@ function searchClick(event) {
 
 searchBtn.addEventListener('click', searchClick);
 
+
+
 function saveFavorites() {
     var input = document.querySelector('.search-input').value;
     localStorage.setItem('Favorites', input);
@@ -97,6 +97,7 @@ function saveFavorites() {
     
 }
 searchBtn.addEventListener('click', saveFavorites);
+
 
 
 
