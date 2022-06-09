@@ -82,6 +82,25 @@ function searchClick(event) {
 
 searchBtn.addEventListener('click', searchClick);
 
+
+
+function saveFavorites() {
+    var input = document.querySelector('.search-input').value;
+    localStorage.setItem('Favorites', input);
+    console.log(input)
+    for(var i=0; i<localStorage.length; i++) {
+        var input = localStorage.key(i);
+    }
+    
+    // document.querySelector('.search-input').value = localStorage.getItem('input');
+    
+    
+}
+searchBtn.addEventListener('click', saveFavorites);
+
+
+
+
 // function displayRecipeResults(recipeArray) {
 
 //     // create HTML elements with cards to show recipe info w/ first 5 ingredients
