@@ -14,14 +14,14 @@ const nutritionApi = {
 	}
 };
 
+// var userText = searchBarInput.text;
+// console.log(userText)
 
-
-
-
-var searchBarInput = document.querySelector('#search-input');
 var searchBtn = document.querySelector('button')
 function searchClick(event) {
     event.preventDefault();
+    var searchBarInput = document.getElementById('search-input').value;
+    console.log(searchBarInput)
     //onclick event
     // build first url request
 
@@ -81,7 +81,7 @@ function searchClick(event) {
         })
 }
 
-searchBarInput.addEventListener('click', searchClick);
+searchBtn.addEventListener('click', searchClick);
 
 // function displayRecipeResults(recipeArray) {
 
