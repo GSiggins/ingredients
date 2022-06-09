@@ -1,14 +1,17 @@
-var searchFormEl = document.querySelector('#search-form');
-
-function searchClick () {
+var searchBarInput = document.querySelector('#search-input');
+var searchBtn = document.querySelector('button')
+function searchClick (event) {
+    event.preventDefault();
 
     //onclick event
+    searchBarInput.addEventListener('click', searchBtn);
 
     // build first url request
-    var queryString = './search-results.html?q=' + searchInputVal + '&format=';
+    https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=baked%20alaska
+    var recipeString = 'https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=' + searchBarInput;
 
     // build second url request
-    var queryString = './search-results.html?q=' + searchInputVal + '&format=';
+    var nutritionString = './search-results.html?q=' + searchBarInput + '&format=';
 
     function recipeQuery() {
 
