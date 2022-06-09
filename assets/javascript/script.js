@@ -1,10 +1,14 @@
+var searchFormEl = document.querySelector('#search-form');
+
 function searchClick () {
 
     //onclick event
 
     // build first url request
+    var queryString = './search-results.html?q=' + searchInputVal + '&format=';
 
     // build second url request
+    var queryString = './search-results.html?q=' + searchInputVal + '&format=';
 
     function recipeQuery() {
 
