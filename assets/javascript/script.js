@@ -100,6 +100,11 @@ function saveFavorites() {
 }
 
 function displayResult(resultArray) {
+
+    resultBody.append(resultsContainer);
+    resultBody.classList.add('card-body');
+    resultCard.append(resultBody);
+  
     console.log(resultArray)
     var resultsContainer = document.querySelector('.results-container');
 
@@ -107,6 +112,7 @@ function displayResult(resultArray) {
         var resultCard = document.createElement('div')
 
         // Creates H3 for title within card, sets text, and appends
+
         var title = document.createElement('h3');
         title.textContent = Element.title.value;
         resultCard.append(title);
