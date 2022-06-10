@@ -98,16 +98,16 @@ function saveFavorites() {
 }
 
 function displayResult(resultArray) {
-    console.log("showing index " + resultArray)
+    console.log("showing index " + resultArray);
     var resultBody = document.createElement('div');
-    resultBody.append.apply(resultCont)
+    resultBody.append.apply(resultCont);
     resultBody.classList.add('card-body');
     resultCard.append(resultBody);
 
     resultArray.forEach(Object => {
         // Creates H3 for title within card
         var title = document.createElement('h3');
-        title.textContent = resultObj.title
+        title.textContent = resultObj.title;
         // Creates H4 for Serving sizes within card
         var servings = document.createElement('h4');
         title.textContent = resultObj.title;
@@ -117,10 +117,11 @@ function displayResult(resultArray) {
         var ingArr = resultObj.ingredients.split('|');
         for (let i = 0; i < 5; i++) {
             document.createElement('h3');
-            
         }
+    })
+}
 
-        searchBtn.addEventListener('click', saveFavorites);
+searchBtn.addEventListener('click', saveFavorites)
 
 
 
