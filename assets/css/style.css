@@ -10,14 +10,6 @@
     padding: 20px;
 }
 
-.results-nav {
-    color:#873b21;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px;
-}
-
 ul {
     list-style: none;
     display: flex;
@@ -26,31 +18,17 @@ ul {
 
 li {
     padding: 20px;
+    font-size: 25px;
 }
 
-.btn {
-    background-color: #5d6127;
-    color: bisque;
+.logo {
+    font-size: 60px;
 }
 
-.results-search {
-    color: #873b21;
-    background-color:bisque;
-    width: 50%;
-}
-
-.results-h1, .results-h2 {
-    color: #873b21;
-    background-color:bisque
-}
 
 .landing-body {
-    background-color: #896b37;
+    background-color: #686e43;
   }
-
-.results-body {
-    background-color: bisque;
-}
   
   .main-search-input {
       background: #fff;
