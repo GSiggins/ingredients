@@ -93,9 +93,8 @@ function saveFavorites() {
 }
 
 function displayResult(resultArray) {
-    console.log("showing index " + resultArray);
     var resultBody = document.createElement('div');
-    resultBody.append.apply(resultCont);
+    resultBody.append(resultsContainer);
     resultBody.classList.add('card-body');
     resultCard.append(resultBody);
 
