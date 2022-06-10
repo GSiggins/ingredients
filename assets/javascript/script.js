@@ -117,6 +117,7 @@ function displayResult(resultArray) {
         // Creates H4 for title within card, sets text, and appends
         var ingHeader = document.createElement('h4');
         ingHeader.textContent = "Ingredients: "
+        ingHeader.className = "ing-header"
         resultCard.append(ingHeader);
 
         // Splits ingredient string at "|" and returns array called ingArr. 
