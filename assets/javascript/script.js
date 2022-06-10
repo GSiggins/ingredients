@@ -1,7 +1,7 @@
 var searchBtn = document.querySelector('.search-btn')
 var landingSearch = document.getElementById('landing-search')
 var resultsSearch = document.getElementById('results-search')
-
+var resultsContainer = document.querySelector('.results-container');
 
 const recipeApi = {
     method: 'GET',
@@ -82,9 +82,6 @@ function nutritionQuery(nutritionString) {
         })
 }
 
-searchBtn.addEventListener('click', searchClick);
-
-
 
 function saveFavorites() {
     // Set variable for favorites and throw it into and array 
@@ -100,17 +97,10 @@ function saveFavorites() {
 }
 
 function displayResult(resultArray) {
-
-    // resultBody.append(resultsContainer);
-    // resultBody.classList.add('card-body');
- 
-  
     console.log(resultArray)
-    var resultsContainer = document.querySelector('.results-container');
-   
- 
-
     resultArray.forEach(element => {
+
+        // Creates master div to house children
         var resultCard = document.createElement('div');
  
         // Creates H3 for title within card, sets text, and appends
@@ -141,13 +131,74 @@ function displayResult(resultArray) {
             ingList.textContent = ingArr[i];
             ingUL.append(ingList);
         }
+        // Appends the ul to the result card
         resultCard.append(ingUL);
+
         // Appends all created elements in card to parent container
         resultsContainer.append(resultCard);
+        resultCard.className = 'recipe-card'
+        var recipeCard = document.querySelector('.recipe-card');
+        // Adds eventListener for each recipe card
+       
     })
+ 
 }
 
-// searchBtn.addEventListener('click', saveFavorites)
+
+
+function recipeShow(event) {
+    if (event.target.matches(".recipe-card")){
+        console.log("this is a card")
+    }
+
+    // document.location = "./recipe-page.html"
+    // var recipeContainer = document.querySelector('.recipe-container')
+}
+
+searchBtn.addEventListener('click', searchClick);
+searchBtn.addEventListener('click', saveFavorites);
+resultsContainer.addEventListener('click', recipeShow);
+
+// resultArray.forEach(element => {
+
+//     // Creates master div to house children
+//     var recipeDiv = document.createElement('div');
+
+    // // Creates H3 for title within card, sets text, and appends
+    // var title = document.createElement('h3');
+    // console.log(element.title);
+    // title.textContent = element.title;
+    // recipeDiv.append(title);
+
+    // // Creates H4 for Serving sizes within card, sets text, and appends
+    // var servings = document.createElement('h4');
+    // servings.textContent = element.servings;
+    // recipeDiv.append(servings);
+
+    // // Creates H4 for title within card, sets text, and appends
+    // var ingHeader = document.createElement('h4');
+    // ingHeader.textContent = "Ingredients: "
+    // recipeDiv.append(ingHeader);
+
+    // // Splits ingredient string at "|" and returns array called ingArr. 
+    // // Creates UL to house individual ingredients
+    // var ingArr = element.ingredients.split('|');
+    // console.log(ingArr)
+    // var ingUL = document.createElement('ul');
+
+    // // Loops ingredient list and creates li for each ingredient and appends to ul
+    // for (let i = 0; i < ingArr.length; i++) {
+    //     var ingList = document.createElement('li');
+    //     ingList.textContent = ingArr[i];
+    //     ingUL.append(ingList);
+//     resultCard.append(ingUL);
+//     // Appends all created elements in card to parent container
+//     recipeContainer.append(resultCard);
+// })
+// }
+
+
+
 
 
    
