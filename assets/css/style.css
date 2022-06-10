@@ -41,11 +41,16 @@ li {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    text-shadow: 4px 4px #873b21;
+    text-shadow: 4px 4px 8px #873b21;
 }
 
 .recipe-nav .logo {
+    font-size: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     color: #686e43;
+    text-shadow: 5px 5px 10px gray;
 }
 
 
@@ -136,6 +141,14 @@ li {
       height: 90vh;
       z-index: 1;
   }
+
+  .chilaquiles {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 70%;
+    z-index: 1;
+}
   
   :focus {
       outline: 0;
@@ -171,8 +184,16 @@ li {
   }
   }
   
-  li:hover{
+  .landing-ul li:hover{
     color: bisque;
+  }
+
+  .recipe-ul li:hover{
+    color: #99a161;
+  }
+
+  .recipe-ul a:hover{
+    text-decoration: none;
   }
 
   a {
