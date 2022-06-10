@@ -85,19 +85,18 @@ function searchClick(event) {
 searchBtn.addEventListener('click', searchClick);
 
 function saveFavorites() {
-    var favorites = [];
-    var favoritesText = document.querySelector('.search-input').value.trim();
-    localStorage.setItem('favorites', favoritesText);
-    var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+    
+    var storedFavorites = JSON.parse(localStorage.getItem("favorites")) || []
+    
+   
+    
+    var favoritesText =document.querySelector('.search-input').value.trim();
+    storedFavorites.push(favoritesText)
+    localStorage.setItem('favorites',JSON.stringify(storedFavorites));
+    console.log(storedFavorites)
 
-    if (storedFavorites !== null) {
-       favorites = storedFavorites 
-    }
 
-    favorites.push(favoritesText);
-    favoritesText.value = ""
 
-    localStorage.setItem("favorites", JSON.stringify(favorites));
 
 
 }
