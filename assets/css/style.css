@@ -27,11 +27,12 @@ li {
 
 
 
-.landing-body,  {
+.landing-body {
     background-color: #686e43;
+}
 
-  .recipe-body {
-  }
+  /* .recipe-body {
+  } */
   
   .main-search-input {
       background: #fff;
