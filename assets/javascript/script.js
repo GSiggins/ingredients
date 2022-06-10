@@ -85,16 +85,11 @@ searchBtn.addEventListener('click', searchClick);
 
 
 function saveFavorites() {
-    var input = document.querySelector('.search-input').value;
-    localStorage.setItem('Favorites', input);
-    console.log(input)
-    for (var i = 0; i < localStorage.length; i++) {
-        var input = localStorage.key(i);
-    }
-
-    // document.querySelector('.search-input').value = localStorage.getItem('input');
-
-
+    var storedFavorites = JSON.parse(localStorage.getItem("favorites")) || []    
+    var favoritesText =document.querySelector('.search-input').value.trim();
+    storedFavorites.push(favoritesText)
+    localStorage.setItem('favorites',JSON.stringify(storedFavorites));
+    console.log(storedFavorites)
 }
 
 function displayResult(resultArray) {
@@ -123,6 +118,19 @@ function displayResult(resultArray) {
 
 searchBtn.addEventListener('click', saveFavorites)
 
+
+   
+   
+   
+   
+   
+   
+    
+   
+    
+    
+    
+    
 
 
 
