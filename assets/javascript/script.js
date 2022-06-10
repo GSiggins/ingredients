@@ -110,7 +110,7 @@ function displayResult(resultArray) {
         var ingHeader = document.createElement('h4');
 
         var ingArr = resultObj.ingredients.split('|');
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < ingArr.length; i++) {
             document.createElement('h3');
         }
     })
