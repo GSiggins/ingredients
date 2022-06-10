@@ -101,25 +101,27 @@ function saveFavorites() {
 
 function displayResult(resultArray) {
 
-    resultBody.append(resultsContainer);
-    resultBody.classList.add('card-body');
-    resultCard.append(resultBody);
+    // resultBody.append(resultsContainer);
+    // resultBody.classList.add('card-body');
+ 
   
     console.log(resultArray)
     var resultsContainer = document.querySelector('.results-container');
+   
+ 
 
-    resultArray.forEach(Element => {
-        var resultCard = document.createElement('div')
-
+    resultArray.forEach(element => {
+        var resultCard = document.createElement('div');
+ 
         // Creates H3 for title within card, sets text, and appends
-
         var title = document.createElement('h3');
-        title.textContent = Element.title.value;
+        console.log(element.title);
+        title.textContent = element.title;
         resultCard.append(title);
 
         // Creates H4 for Serving sizes within card, sets text, and appends
         var servings = document.createElement('h4');
-        title.textContent = Element.servings.value;
+        servings.textContent = element.servings;
         resultCard.append(servings);
 
         // Creates H4 for title within card, sets text, and appends
@@ -129,15 +131,17 @@ function displayResult(resultArray) {
 
         // Splits ingredient string at "|" and returns array called ingArr. 
         // Creates UL to house individual ingredients
-        var ingArr = Element.ingredients.split('|');
+        var ingArr = element.ingredients.split('|');
+        console.log(ingArr)
         var ingUL = document.createElement('ul');
 
         // Loops ingredient list and creates li for each ingredient and appends to ul
         for (let i = 0; i < ingArr.length; i++) {
             var ingList = document.createElement('li');
-            ingList.textContent = ingArr[i].value;
+            ingList.textContent = ingArr[i];
             ingUL.append(ingList);
         }
+        resultCard.append(ingUL);
         // Appends all created elements in card to parent container
         resultsContainer.append(resultCard);
     })
