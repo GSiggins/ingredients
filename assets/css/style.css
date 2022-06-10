@@ -1,8 +1,9 @@
-* {
+/* * {
     font-family: 'Josefin Sans', sans-serif;
-}
+} */
 
 .landing-nav {
+    font-family: 'Josefin Sans', sans-serif;
     color:#fff;
     display: flex;
     flex-direction: row;
@@ -11,6 +12,7 @@
 }
 
 .recipe-nav {
+    font-family: 'Josefin Sans', sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -41,7 +43,7 @@ li {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    text-shadow: 4px 4px 8px #873b21;
+    text-shadow: 4px 4px 8px #323232;
 }
 
 .recipe-nav .logo {
@@ -53,6 +55,42 @@ li {
     text-shadow: 5px 5px 10px gray;
 }
 
+.results-container {
+    font-family: 'Crimson Text', serif;
+    position: absolute;
+    top: 700px;
+    background-color: bisque;
+    margin: 50px;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.recipe-card {
+    background-color: bisque;
+}
+
+.results-container h3 {
+    font-size: 35px;
+    font-weight: bolder;
+    margin-top: 20;
+    text-decoration: underline;
+}
+
+.results-container h4 {
+    font-size: 20px;
+}
+
+.results-container ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.results-container li {
+    font-size: 17px;
+    line-height: 0px;
+    list-style: square;
+}
 
 .landing-body {
     background-color: #686e43;
@@ -63,6 +101,7 @@ li {
   }
   
   .main-search-input {
+    font-family: 'Josefin Sans', sans-serif;
       background: #fff;
       padding: 0 120px 0 0;
       border-radius: 1px;
@@ -90,6 +129,7 @@ li {
   }
   
   .main-search-input-item {
+    font-family: 'Crimson Text', serif;
       float: left;
       width: 100%;
       box-sizing: border-box;
