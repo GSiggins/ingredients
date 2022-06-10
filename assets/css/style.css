@@ -9,6 +9,9 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .recipe-nav {
