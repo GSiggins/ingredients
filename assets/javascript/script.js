@@ -85,18 +85,36 @@ function searchClick(event) {
 searchBtn.addEventListener('click', searchClick);
 
 function saveFavorites() {
-    var input = document.querySelector('.search-input').value;
-    localStorage.setItem('Favorites', input);
-    console.log(input)
-    for(var i=0; i<localStorage.length; i++) {
-        var input = localStorage.key(i);
+    var favorites = [];
+    var favoritesText = document.querySelector('.search-input').value.trim();
+    localStorage.setItem('favorites', favoritesText);
+    var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+
+    if (storedFavorites !== null) {
+       favorites = storedFavorites 
     }
-    
-    // document.querySelector('.search-input').value = localStorage.getItem('input');
-    
-    
+
+    favorites.push(favoritesText);
+    favoritesText.value = ""
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+
+
 }
 searchBtn.addEventListener('click', saveFavorites);
+
+   
+   
+   
+   
+   
+   
+    
+   
+    
+    
+    
+    
 
 
 
