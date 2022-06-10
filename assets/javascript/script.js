@@ -1,19 +1,22 @@
 var searchBtn = document.querySelector('.search-btn')
+var landingSearch = document.getElementById('landing-search')
+var resultsSearch = document.getElementById('results-search')
+
 
 const recipeApi = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
-		'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
-	}
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
+        'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
+    }
 };
 
 const nutritionApi = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
-		'X-RapidAPI-Host': 'nutrition-by-api-ninjas.p.rapidapi.com'
-	}
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
+        'X-RapidAPI-Host': 'nutrition-by-api-ninjas.p.rapidapi.com'
+    }
 };
 
 // var userText = searchBarInput.text;
@@ -23,36 +26,31 @@ function searchClick(event) {
     event.preventDefault();
     var searchBarInput = document.querySelector('.search-input').value;
     console.log(searchBarInput)
-    //onclick event
     // build first url request
-
     var recipeString = 'https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=' + searchBarInput;
     console.log(recipeString)
-
     // build second url request
     var nutritionString = 'https://nutrition-by-api-ninjas.p.rapidapi.com/v1/nutrition?query=' + searchBarInput;
     console.log(nutritionString)
-
-
     // Call fetch functions
     recipeQuery(recipeString);
     nutritionQuery(nutritionString);
-
-
+    console.log(location)
+    //window.location.href = 'results-page.html';
     // return variables to use in fetch functions
     return nutritionString, recipeString;
 }
 
 
 
-    function recipeQuery(recipeString) {
-        //fetch with built URL to return recipe info
-        fetch(recipeString,{
-            headers: {
-                'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
-                'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
-            }
-        })
+function recipeQuery(recipeString) {
+    //fetch with built URL to return recipe info
+    fetch(recipeString, {
+        headers: {
+            'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
+            'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
+        }
+    })
 
         .then(function (response) {
             return response.json();
@@ -64,14 +62,14 @@ function searchClick(event) {
 }
 
 
-    function nutritionQuery(nutritionString) {
-        //fetch built with URL to return nutritional info
-        fetch(nutritionString,{
-            headers: {
-                'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
-                'X-RapidAPI-Host': 'nutrition-by-api-ninjas.p.rapidapi.com'
-            }
-        })
+function nutritionQuery(nutritionString) {
+    //fetch built with URL to return nutritional info
+    fetch(nutritionString, {
+        headers: {
+            'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
+            'X-RapidAPI-Host': 'nutrition-by-api-ninjas.p.rapidapi.com'
+        }
+    })
 
         .then(function (response) {
             return response.json();
@@ -84,23 +82,42 @@ function searchClick(event) {
 
 searchBtn.addEventListener('click', searchClick);
 
+
+
 function saveFavorites() {
-    
-    var storedFavorites = JSON.parse(localStorage.getItem("favorites")) || []
-    
-   
-    
+    var storedFavorites = JSON.parse(localStorage.getItem("favorites")) || []    
     var favoritesText =document.querySelector('.search-input').value.trim();
     storedFavorites.push(favoritesText)
     localStorage.setItem('favorites',JSON.stringify(storedFavorites));
     console.log(storedFavorites)
-
-
-
-
-
 }
-searchBtn.addEventListener('click', saveFavorites);
+
+function displayResult(resultArray) {
+    console.log("showing index " + resultArray);
+    var resultBody = document.createElement('div');
+    resultBody.append.apply(resultCont);
+    resultBody.classList.add('card-body');
+    resultCard.append(resultBody);
+
+    resultArray.forEach(Object => {
+        // Creates H3 for title within card
+        var title = document.createElement('h3');
+        title.textContent = resultObj.title;
+        // Creates H4 for Serving sizes within card
+        var servings = document.createElement('h4');
+        title.textContent = resultObj.title;
+        // Creates H4 for title within card
+        var ingHeader = document.createElement('h4');
+
+        var ingArr = resultObj.ingredients.split('|');
+        for (let i = 0; i < 5; i++) {
+            document.createElement('h3');
+        }
+    })
+}
+
+searchBtn.addEventListener('click', saveFavorites)
+
 
    
    
