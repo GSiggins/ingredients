@@ -85,10 +85,15 @@ searchBtn.addEventListener('click', searchClick);
 
 
 function saveFavorites() {
-    var storedFavorites = JSON.parse(localStorage.getItem("favorites")) || []    
-    var favoritesText =document.querySelector('.search-input').value.trim();
+    // Set variable for favorites and throw it into and array 
+    var storedFavorites = JSON.parse(localStorage.getItem("favorites")) || []
+    // Get string from search input field   
+    var favoritesText = document.querySelector('.search-input').value.trim();
+    // Store the string
     storedFavorites.push(favoritesText)
+    // set the key as Favorites
     localStorage.setItem('favorites',JSON.stringify(storedFavorites));
+    // Log local storage
     console.log(storedFavorites)
 }
 
