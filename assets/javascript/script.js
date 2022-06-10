@@ -4,19 +4,19 @@ var resultsSearch = document.getElementById('results-search')
 
 
 const recipeApi = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
-		'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
-	}
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
+        'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
+    }
 };
 
 const nutritionApi = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
-		'X-RapidAPI-Host': 'nutrition-by-api-ninjas.p.rapidapi.com'
-	}
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
+        'X-RapidAPI-Host': 'nutrition-by-api-ninjas.p.rapidapi.com'
+    }
 };
 
 // var userText = searchBarInput.text;
@@ -43,14 +43,14 @@ function searchClick(event) {
 
 
 
-    function recipeQuery(recipeString) {
-        //fetch with built URL to return recipe info
-        fetch(recipeString,{
-            headers: {
-                'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
-                'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
-            }
-        })
+function recipeQuery(recipeString) {
+    //fetch with built URL to return recipe info
+    fetch(recipeString, {
+        headers: {
+            'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
+            'X-RapidAPI-Host': 'recipe-by-api-ninjas.p.rapidapi.com'
+        }
+    })
 
         .then(function (response) {
             return response.json();
@@ -62,14 +62,14 @@ function searchClick(event) {
 }
 
 
-    function nutritionQuery(nutritionString) {
-        //fetch built with URL to return nutritional info
-        fetch(nutritionString,{
-            headers: {
-                'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
-                'X-RapidAPI-Host': 'nutrition-by-api-ninjas.p.rapidapi.com'
-            }
-        })
+function nutritionQuery(nutritionString) {
+    //fetch built with URL to return nutritional info
+    fetch(nutritionString, {
+        headers: {
+            'X-RapidAPI-Key': 'da5647db3emsh4b6e6a9f196c9c3p10549ejsn3ebf75e33dcb',
+            'X-RapidAPI-Host': 'nutrition-by-api-ninjas.p.rapidapi.com'
+        }
+    })
 
         .then(function (response) {
             return response.json();
@@ -88,15 +88,39 @@ function saveFavorites() {
     var input = document.querySelector('.search-input').value;
     localStorage.setItem('Favorites', input);
     console.log(input)
-    for(var i=0; i<localStorage.length; i++) {
+    for (var i = 0; i < localStorage.length; i++) {
         var input = localStorage.key(i);
     }
-    
+
     // document.querySelector('.search-input').value = localStorage.getItem('input');
-    
-    
+
+
 }
-searchBtn.addEventListener('click', saveFavorites);
+
+function displayResult(resultArray) {
+    console.log("showing index " + resultArray)
+    var resultBody = document.createElement('div');
+    resultBody.append.apply(resultCont)
+    resultBody.classList.add('card-body');
+    resultCard.append(resultBody);
+
+    resultArray.forEach(Object => {
+        // Creates H3 for title within card
+        var title = document.createElement('h3');
+        title.textContent = resultObj.title
+        // Creates H4 for Serving sizes within card
+        var servings = document.createElement('h4');
+        title.textContent = resultObj.title;
+        // Creates H4 for title within card
+        var ingHeader = document.createElement('h4');
+
+        var ingArr = resultObj.ingredients.split('|');
+        for (let i = 0; i < 5; i++) {
+            document.createElement('h3');
+            
+        }
+
+        searchBtn.addEventListener('click', saveFavorites);
 
 
 
