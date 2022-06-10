@@ -57,7 +57,9 @@ function recipeQuery(recipeString) {
         })
         .then(function (data) {
             console.log(data)
-            //return array of objects
+            var resultArray = data;
+            displayResult(resultArray);
+            return resultArray;
         })
 }
 
@@ -85,37 +87,63 @@ searchBtn.addEventListener('click', searchClick);
 
 
 function saveFavorites() {
-    var storedFavorites = JSON.parse(localStorage.getItem("favorites")) || []    
-    var favoritesText =document.querySelector('.search-input').value.trim();
+    // Set variable for favorites and throw it into and array 
+    var storedFavorites = JSON.parse(localStorage.getItem("favorites")) || []
+    // Get string from search input field   
+    var favoritesText = document.querySelector('.search-input').value.trim();
+    // Store the string
     storedFavorites.push(favoritesText)
+    // set the key as Favorites
     localStorage.setItem('favorites',JSON.stringify(storedFavorites));
+    // Log local storage
     console.log(storedFavorites)
 }
 
 function displayResult(resultArray) {
-    var resultBody = document.createElement('div');
+
     resultBody.append(resultsContainer);
     resultBody.classList.add('card-body');
     resultCard.append(resultBody);
+  
+    console.log(resultArray)
+    var resultsContainer = document.querySelector('.results-container');
 
-    resultArray.forEach(Object => {
-        // Creates H3 for title within card
+    resultArray.forEach(Element => {
+        var resultCard = document.createElement('div')
+
+        // Creates H3 for title within card, sets text, and appends
+
         var title = document.createElement('h3');
-        title.textContent = resultObj.title;
-        // Creates H4 for Serving sizes within card
-        var servings = document.createElement('h4');
-        title.textContent = resultObj.title;
-        // Creates H4 for title within card
-        var ingHeader = document.createElement('h4');
+        title.textContent = Element.title.value;
+        resultCard.append(title);
 
-        var ingArr = resultObj.ingredients.split('|');
+        // Creates H4 for Serving sizes within card, sets text, and appends
+        var servings = document.createElement('h4');
+        title.textContent = Element.servings.value;
+        resultCard.append(servings);
+
+        // Creates H4 for title within card, sets text, and appends
+        var ingHeader = document.createElement('h4');
+        ingHeader.textContent = "Ingredients: "
+        resultCard.append(ingHeader);
+
+        // Splits ingredient string at "|" and returns array called ingArr. 
+        // Creates UL to house individual ingredients
+        var ingArr = Element.ingredients.split('|');
+        var ingUL = document.createElement('ul');
+
+        // Loops ingredient list and creates li for each ingredient and appends to ul
         for (let i = 0; i < ingArr.length; i++) {
-            document.createElement('h3');
+            var ingList = document.createElement('li');
+            ingList.textContent = ingArr[i].value;
+            ingUL.append(ingList);
         }
+        // Appends all created elements in card to parent container
+        resultsContainer.append(resultCard);
     })
 }
 
-searchBtn.addEventListener('click', saveFavorites)
+// searchBtn.addEventListener('click', saveFavorites)
 
 
    
