@@ -163,15 +163,20 @@ function recipeShow(event) {
         modal.className = ('show');
         var recipeModal = document.createElement('div');
         modal.append(recipeModal);
+    }
 
-    var recipeTitle = chosenRecipe.querySelector('title-header');
-    var recipeServings = chosenRecipe.querySelector('servings-header');
-    var recipeIng = chosenRecipe.querySelector('ing-header');
-    var recipeDes = chosenRecipe.querySelector('recipe-description');
-    var chosenTitle = recipeTitle.innerHTML;
-    var chosenServings = recipeServings.innerHTML;
-    var chosenIng = recipeIng.innerHTML;
-    var chosenDes = recipeDes.innerHTML;
+    var recipeTitle = chosenRecipe.querySelector('#title-header');
+    var recipeServings = chosenRecipe.querySelector('#servings-header');
+    var recipeDes = chosenRecipe.querySelector('#recipe-description');
+    var recipeIng = chosenRecipe.querySelector('#ing-list');
+    var listItems = recipeIng.getElementsByTagName('li');
+    for (let i = 0; i < listItems.length; i++) {
+        console.log (listItems[i]);
+    }
+    var chosenTitle = recipeTitle.textContent;
+    var chosenServings = recipeServings.textContent;
+    var chosenIng = recipeIng.textContent;
+    var chosenDes = recipeDes.textContent;
 
     var modalTitle = document.createElement('h3');
     modalTitle.textContent = chosenTitle;
@@ -191,9 +196,13 @@ function recipeShow(event) {
     modalInst.textContent = chosenDes;
     modal.append(modalInst);
 
+    
+   
+        
+    // Loop through the NodeList object.
+
     // document.location = "./recipe-page.html"
     // var recipeContainer = document.querySelector('.recipe-container')
-}
 }
 
 searchBtn.addEventListener('click', searchClick);
