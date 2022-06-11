@@ -28,11 +28,25 @@
       </navbar>
     </header>
 
-    <div class="results-container"></div>
-      <div id="modal" class ="hide">
-      <button class="favorite-btn"></button>
-    </div>
-  
+<body class="landing-body">
+  <header class="landing-nav">
+    <div class="logo">Chef Buddy</div>
+    <navbar>
+      <ul class="landing-ul">
+        <li class="home-btn">Home</li>
+        <li class="favorites-btn">Favorites</li>
+      </ul>
+    </navbar>
+  </header>
+
+  <div class="results-container"></div>
+
+  <div id="modal" class="hide">
+    <h2 class="modal-header"></h2>
+    <p class="instructions"></p>
+    <button class="start-btn"></button>
+  </div>
+
     <div class="main-search-input-wrap">
       <div class="main-search-input fl-wrap">
         <div class="main-search-input-item">
@@ -43,13 +57,6 @@
             placeholder="Search Recipes..."
           />
         </div>
-
-
-  <div class="main-search-input-wrap">
-    <div class="main-search-input fl-wrap">
-      <div class="main-search-input-item">
-        <input class="search-input" type="text" value="" placeholder="Search Recipes..." />
-      </div>
 
       <button class="main-search-button search-btn">Search</button>
     </div>
