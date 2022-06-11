@@ -155,8 +155,6 @@ function displayResult(resultArray) {
  
 }
 
-
-
 function recipeShow(event) {
     if (event.target.matches(".recipe-card")){
         console.log(event.target);
