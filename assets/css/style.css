@@ -203,10 +203,12 @@ li {
 }
 
 .hide{
-
+    display: none;
 }
 
-.show{}
+.show{
+    display: block;
+}
   
   :focus {
       outline: 0;
@@ -254,5 +256,9 @@ li {
 
 a {
     color: white;
-}
+  }
   
+  #recipe-description {
+    display:none;
+  }
+
