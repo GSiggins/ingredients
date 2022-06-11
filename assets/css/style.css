@@ -202,6 +202,13 @@ li {
     z-index: 1;
 }
 
+#modal {
+    background-color: bisque;
+    border: dashed 6px #873b21;
+    padding: 15px;
+    width: 80%;
+}
+
 .hide{
     display: none;
 }
