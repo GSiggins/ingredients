@@ -12,22 +12,6 @@
     z-index: 4;
 }
 
-.recipe-nav {
-    font-family: 'Josefin Sans', sans-serif;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.recipe-ul li {
-    color: #686e43;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px;
-}
-
 ul {
     list-style: none;
     display: flex;
@@ -65,6 +49,11 @@ li {
     padding: 30px;
     margin-top: -300px;
     z-index: 3;
+}
+
+#recipe-modal {
+    margin: 150px auto 20px;
+
 }
 
 .recipe-card {
@@ -207,6 +196,9 @@ li {
     border: dashed 6px #873b21;
     padding: 15px;
     width: 80%;
+    position: relative;
+    margin: auto;
+    z-index: 4;
 }
 
 .hide{

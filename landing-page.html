@@ -17,29 +17,32 @@
     href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Dancing+Script&family=Josefin+Sans:wght@100;400&family=Sniglet:wght@400;800&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Chef Buddy | Home</title>
-</head>
+  <body class="landing-body">
+    <header class="landing-nav">
+      <div class="logo">Chef Buddy</div>
+      <navbar>
+        <ul class="landing-ul">
+          <li class="home-btn">Home</li>
+          <li class="saved-favorites-btn">Favorites</li>
+        </ul>
+      </navbar>
+    </header>
 
-<body class="landing-body">
-  <header class="landing-nav">
-    <div class="logo">Chef Buddy</div>
-    <navbar>
-      <ul class="landing-ul">
-        <li class="home-btn">Home</li>
-        <li class="favorites-btn">Favorites</li>
-      </ul>
-    </navbar>
-  </header>
-
-  <div class="results-container"></div>
+    <div class="results-container"></div>
+      <div id="modal" class ="hide">
+      <button class="favorite-btn"></button>
+    </div>
   
-  <div id="modal" class="hide">
-    <h2 class="modal-header"></h2>
-    <p class="instructions"></p>
-    <button class="start-btn"></button>
-  </div>
-
+    <div class="main-search-input-wrap">
+      <div class="main-search-input fl-wrap">
+        <div class="main-search-input-item">
+          <input
+            class="search-input"
+            type="text"
+            value=""
+            placeholder="Search Recipes..."
+          />
+        </div>
 
 
   <div class="main-search-input-wrap">
