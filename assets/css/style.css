@@ -25,19 +25,7 @@ li {
 
 .landing-nav .logo {
     font-size: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     text-shadow: 4px 4px 8px #323232;
-}
-
-.recipe-nav .logo {
-    font-size: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    color: #686e43;
-    text-shadow: 5px 5px 10px gray;
 }
 
 .results-container {
