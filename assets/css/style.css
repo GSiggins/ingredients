@@ -43,11 +43,11 @@ li {
 .results-container {
     font-family: 'Crimson Text', serif;
     position: absolute;
-    top: 700px;
+    top: 10px;
     margin: 50px;
     justify-content: center;
     padding: 30px;
-    margin-top: -300px;
+    margin-top: 300px;
     z-index: 3;
 }
 
