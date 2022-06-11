@@ -71,6 +71,7 @@ li {
 
 .recipe-card {
     background-color: bisque;
+    min-width: 80%;
 }
 
 .results-container h3 {
@@ -78,21 +79,25 @@ li {
     font-weight: bolder;
     margin-top: 20;
     text-decoration: underline;
+    pointer-events: none;
 }
 
 .results-container h4 {
     font-size: 20px;
+    pointer-events: none;
 }
 
 .results-container ul {
     display: flex;
     flex-direction: column;
+    pointer-events: none;
 }
 
 .results-container li {
     font-size: 17px;
     line-height: 0px;
     list-style: square;
+    pointer-events: none;
 }
 
 .landing-body {
@@ -197,7 +202,10 @@ li {
       outline: 0;
   }
   
-  
+  .recipe-description {
+    display: none;
+  }
+
   @media only screen and (max-width: 768px){
   .main-search-input {
       background: rgba(255,255,255,0.2);
