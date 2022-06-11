@@ -35,7 +35,7 @@ li {
     margin: 50px;
     justify-content: center;
     padding: 30px;
-    margin-top: 300px;
+    margin-top: 450px;
     z-index: 3;
     display: flex;
     flex-direction: row;
@@ -43,8 +43,7 @@ li {
 }
 
 #recipe-modal {
-    margin: 150px auto 20px;
-
+    margin: 30px;
 }
 
 .recipe-card {
@@ -53,6 +52,7 @@ li {
     padding: 15px;
     margin: 30px;
     flex: 1 1 400px;
+    border-radius: 10px;
 }
 
 .results-container h3 {
@@ -95,10 +95,12 @@ li {
     background: #fff;
     padding: 0 120px 0 0;
     border-radius: 1px;
-    margin-top: 220px;
+    margin-top: 200px;
     box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.3);
-    z-index: 3;
     width: 80%;
+    position: sticky;
+    top: 125px;
+    z-index: 3;
 }
   
 .fl-wrap {
@@ -184,9 +186,15 @@ li {
     border: dashed 6px #873b21;
     padding: 15px;
     width: 80%;
-    position: relative;
-    margin: auto;
-    z-index: 4;
+    position: fixed;
+    top: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 0 100px 500px rgba(0, 0, 0, 0.576);
+    border-radius: 10px;
 }
 
 .hide{
