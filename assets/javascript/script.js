@@ -162,6 +162,7 @@ function recipeShow(event) {
         var modal = document.querySelector('#modal');
         modal.className = ('show');
         var recipeModal = document.createElement('div');
+        recipeModal.setAttribute('id','recipe-modal')
         modal.append(recipeModal);
     }
 
