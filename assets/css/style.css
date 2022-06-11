@@ -25,19 +25,7 @@ li {
 
 .landing-nav .logo {
     font-size: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     text-shadow: 4px 4px 8px #323232;
-}
-
-.recipe-nav .logo {
-    font-size: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    color: #686e43;
-    text-shadow: 5px 5px 10px gray;
 }
 
 .results-container {
@@ -49,6 +37,9 @@ li {
     padding: 30px;
     margin-top: 300px;
     z-index: 3;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 #recipe-modal {
@@ -61,15 +52,16 @@ li {
     border: dashed 6px #873b21;
     padding: 15px;
     margin: 30px;
-    min-width: 80%;
+    flex: 1 1 400px;
 }
 
 .results-container h3 {
     font-size: 35px;
     font-weight: bolder;
-    margin-top: 20;
+    margin: 20px auto;
     text-decoration: underline;
     pointer-events: none;
+    text-align: center;
 }
 
 .results-container h4 {
@@ -85,17 +77,13 @@ li {
 
 .results-container li {
     font-size: 17px;
-    line-height: 0px;
+    line-height: 1;
     list-style: square;
     pointer-events: none;
 }
 
 .landing-body {
     background-color: #686e43;
-}
-
-.recipe-body {
-  background-color: bisque;
 }
 
 .ing-header {
