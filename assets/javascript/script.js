@@ -107,20 +107,20 @@ function displayResult(resultArray) {
         var title = document.createElement('h3');
         console.log(element.title);
         title.textContent = element.title;
-        title.setAttribute = 'title-header';
+        title.setAttribute("id", 'title-header');
         resultCard.append(title);
 
         // Creates H4 for Serving sizes within card, sets text, and appends
         var servings = document.createElement('h4');
         servings.textContent = element.servings;
-        servings.setAttribute = "servings-header";
+        servings.setAttribute("id", "servings-header");
         resultCard.append(servings);
 
         // Creates H4 for title within card, sets text, and appends
         var ingHeader = document.createElement('h4');
         ingHeader.textContent = "Ingredients: ";
         ingHeader.className = "ing-header";
-        ingHeader.setAttribute = "ing-list" ;
+        ingHeader.setAttribute("id", "ing-list");
         resultCard.append(ingHeader);
 
         // Splits ingredient string at "|" and returns array called ingArr. 
@@ -142,7 +142,7 @@ function displayResult(resultArray) {
 
         var recipe = document.createElement('p');
         recipe.textContent = element.instructions;
-        recipe.setAttribute = "recipe-description";
+        recipe.setAttribute("id", "recipe-description");
         resultCard.append(recipe);
 
         // Appends all created elements in card to parent container
@@ -161,38 +161,41 @@ function recipeShow(event) {
     if (event.target.matches(".recipe-card")){
         console.log(event.target);
         chosenRecipe = event.target;
-        var modal = document.querySelector('.modal');
-        var recipeModal = document.createElement('div');
+        var modal = document.querySelector('#modal');
         modal.className = ('show');
+        var recipeModal = document.createElement('div');
         modal.append(recipeModal);
-    }
 
     var recipeTitle = chosenRecipe.querySelector('title-header');
     var recipeServings = chosenRecipe.querySelector('servings-header');
     var recipeIng = chosenRecipe.querySelector('ing-header');
     var recipeDes = chosenRecipe.querySelector('recipe-description');
+    var chosenTitle = recipeTitle.innerHTML;
+    var chosenServings = recipeServings.innerHTML;
+    var chosenIng = recipeIng.innerHTML;
+    var chosenDes = recipeDes.innerHTML;
 
     var modalTitle = document.createElement('h3');
-    console.log(element.title);
-    modalTitle.textContent = recipeTitle;
-    resultCard.append(title);
+    modalTitle.textContent = chosenTitle;
+    modal.append(modalTitle);
 
     // Creates H4 for Serving sizes within card, sets text, and appends
-    var Modalservings = document.createElement('h4');
-    Modalservings.textContent = recipeServings;
-    resultCard.append(servings);
+    var modalServings = document.createElement('h4');
+    modalServings.textContent = chosenServings;
+    modal.append(modalServings);
 
     // Creates H4 for title within card, sets text, and appends
     var modalIng = document.createElement('h4');
-    modalIng.textContent = recipeIng;
-    resultCard.append(ingHeader);
+    modalIng.textContent = chosenIng;
+    modal.append(modalIng);
 
     var modalInst = document.createElement('h4');
-    modalInst.textContent = recipeDes;
-    resultCard.append(ingHeader);
+    modalInst.textContent = chosenDes;
+    modal.append(modalInst);
 
     // document.location = "./recipe-page.html"
     // var recipeContainer = document.querySelector('.recipe-container')
+}
 }
 
 searchBtn.addEventListener('click', searchClick);
