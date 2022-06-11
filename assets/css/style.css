@@ -1,14 +1,10 @@
-/* * {
-    font-family: 'Josefin Sans', sans-serif;
-} */
-
 .landing-nav {
     font-family: 'Josefin Sans', sans-serif;
     color: bisque;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px 20px 20px 20px;;
+    padding: 10px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -112,90 +108,93 @@ li {
 .recipe-body {
   background-color: bisque;
 }
+
+.ing-header {
+    text-decoration: underline;
+}
   
-  .main-search-input {
+.main-search-input {
     font-family: 'Josefin Sans', sans-serif;
-      background: #fff;
-      padding: 0 120px 0 0;
-      border-radius: 1px;
-      margin-top: 220px;
-      box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.3);
-      z-index: 3;
-      width: 80%;
-  }
+    background: #fff;
+    padding: 0 120px 0 0;
+    border-radius: 1px;
+    margin-top: 220px;
+    box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.3);
+    z-index: 3;
+    width: 80%;
+}
   
-  .fl-wrap {
-      float: left;
-      width: 100%;
-      position: relative;
-  }
+.fl-wrap {
+    float: left;
+    width: 100%;
+    position: relative;
+}
   
-  .main-search-input:before {
-      content: '';
-      position: absolute;
-      bottom: -40px;
-      width: 50px;
-      height: 1px;
-      background: rgba(255,255,255,0.41);
-      left: 50%;
-      margin-left: -25px;
-  }
+.main-search-input:before {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    width: 50px;
+    height: 1px;
+    background: rgba(255,255,255,0.41);
+    left: 50%;
+    margin-left: -25px;
+}
   
-  .main-search-input-item {
+.main-search-input-item {
     font-family: 'Crimson Text', serif;
-      float: left;
-      width: 100%;
-      box-sizing: border-box;
-      border-right: 1px solid #eee;
-      height: 50px;
-      position: relative;
-  }
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    border-right: 1px solid #eee;
+    height: 50px;
+    position: relative;
+}
   
-  .main-search-input-item input:first-child {
-      border-radius: 100%;
-  }
+.main-search-input-item input:first-child {
+    border-radius: 100%;
+}
   
-  .main-search-input-item input {
-      float: left;
-      border: none;
-      width: 100%;
-      height: 50px;
-      padding-left: 20px;
-  }
+.main-search-input-item input {
+    float: left;
+    border: none;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+}
   
-  .main-search-button{
+.main-search-button{  
+    background: #873b21;
+}
   
-        background: #873b21;
-  }
+.main-search-button {
+    position: absolute;
+    right: 0px;
+    height: 50px;
+    width: 120px;
+    color: #fff;
+    top: 0;
+    border: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    cursor: pointer;
+}
   
-  .main-search-button {
-      position: absolute;
-      right: 0px;
-      height: 50px;
-      width: 120px;
-      color: #fff;
-      top: 0;
-      border: none;
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
-      cursor: pointer;
-  }
-  
-  .main-search-input-wrap {
-      max-width: 700px;
-      margin: 20px auto;
-      position: relative;
-  }
+.main-search-input-wrap {
+    max-width: 700px;
+    margin: 20px auto;
+    position: relative;
+}
 
-  .chickysammy {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      height: 90vh;
-      z-index: 2;
-  }
+.chickysammy {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 90vh;
+    z-index: 2;
+}
 
-  .chilaquiles {
+.chilaquiles {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -217,7 +216,7 @@ li {
     display: none;
   }
 
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 768px) {
   .main-search-input {
       background: rgba(255,255,255,0.2);
       padding: 14px 20px 10px;
@@ -246,19 +245,14 @@ li {
   }
   }
   
-  .landing-ul li:hover{
-    color: rgb(197, 177, 152);
-  }
+.landing-ul li:hover{
+    text-shadow: 4px 4px 8px #323232;
+}
+.recipe-card:hover {
+    background-color: bisque;
+}
 
-  .recipe-ul li:hover{
-    color: #99a161;
-  }
-
-  .recipe-ul a:hover{
-    text-decoration: none;
-  }
-
-  a {
+a {
     color: white;
-  }
+}
   
