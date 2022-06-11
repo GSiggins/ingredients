@@ -107,17 +107,20 @@ function displayResult(resultArray) {
         var title = document.createElement('h3');
         console.log(element.title);
         title.textContent = element.title;
+        title.setAttribute = 'title-header';
         resultCard.append(title);
 
         // Creates H4 for Serving sizes within card, sets text, and appends
         var servings = document.createElement('h4');
         servings.textContent = element.servings;
+        servings.setAttribute = "servings-header";
         resultCard.append(servings);
 
         // Creates H4 for title within card, sets text, and appends
         var ingHeader = document.createElement('h4');
-        ingHeader.textContent = "Ingredients: "
-        ingHeader.className = "ing-header"
+        ingHeader.textContent = "Ingredients: ";
+        ingHeader.className = "ing-header";
+        ingHeader.setAttribute = "ing-list" ;
         resultCard.append(ingHeader);
 
         // Splits ingredient string at "|" and returns array called ingArr. 
@@ -132,8 +135,15 @@ function displayResult(resultArray) {
             ingList.textContent = ingArr[i];
             ingUL.append(ingList);
         }
+
         // Appends the ul to the result card
         resultCard.append(ingUL);
+
+
+        var recipe = document.createElement('p');
+        recipe.textContent = element.instructions;
+        recipe.setAttribute = "recipe-description";
+        resultCard.append(recipe);
 
         // Appends all created elements in card to parent container
         resultsContainer.append(resultCard);
@@ -149,8 +159,37 @@ function displayResult(resultArray) {
 
 function recipeShow(event) {
     if (event.target.matches(".recipe-card")){
-        console.log("this is a card")
+        console.log(event.target);
+        chosenRecipe = event.target;
+        var modal = document.querySelector('.modal');
+        var recipeModal = document.createElement('div');
+        modal.className = ('show');
+        modal.append(recipeModal);
     }
+
+    var recipeTitle = chosenRecipe.querySelector('title-header');
+    var recipeServings = chosenRecipe.querySelector('servings-header');
+    var recipeIng = chosenRecipe.querySelector('ing-header');
+    var recipeDes = chosenRecipe.querySelector('recipe-description');
+
+    var modalTitle = document.createElement('h3');
+    console.log(element.title);
+    modalTitle.textContent = recipeTitle;
+    resultCard.append(title);
+
+    // Creates H4 for Serving sizes within card, sets text, and appends
+    var Modalservings = document.createElement('h4');
+    Modalservings.textContent = recipeServings;
+    resultCard.append(servings);
+
+    // Creates H4 for title within card, sets text, and appends
+    var modalIng = document.createElement('h4');
+    modalIng.textContent = recipeIng;
+    resultCard.append(ingHeader);
+
+    var modalInst = document.createElement('h4');
+    modalInst.textContent = recipeDes;
+    resultCard.append(ingHeader);
 
     // document.location = "./recipe-page.html"
     // var recipeContainer = document.querySelector('.recipe-container')
@@ -165,33 +204,33 @@ resultsContainer.addEventListener('click', recipeShow);
 //     // Creates master div to house children
 //     var recipeDiv = document.createElement('div');
 
-    // // Creates H3 for title within card, sets text, and appends
-    // var title = document.createElement('h3');
-    // console.log(element.title);
-    // title.textContent = element.title;
-    // recipeDiv.append(title);
+//     // Creates H3 for title within card, sets text, and appends
+//     var title = document.createElement('h3');
+//     console.log(element.title);
+//     title.textContent = element.title;
+//     recipeDiv.append(title);
 
-    // // Creates H4 for Serving sizes within card, sets text, and appends
-    // var servings = document.createElement('h4');
-    // servings.textContent = element.servings;
-    // recipeDiv.append(servings);
+//     // Creates H4 for Serving sizes within card, sets text, and appends
+//     var servings = document.createElement('h4');
+//     servings.textContent = element.servings;
+//     recipeDiv.append(servings);
 
-    // // Creates H4 for title within card, sets text, and appends
-    // var ingHeader = document.createElement('h4');
-    // ingHeader.textContent = "Ingredients: "
-    // recipeDiv.append(ingHeader);
+//     // Creates H4 for title within card, sets text, and appends
+//     var ingHeader = document.createElement('h4');
+//     ingHeader.textContent = "Ingredients: "
+//     recipeDiv.append(ingHeader);
 
-    // // Splits ingredient string at "|" and returns array called ingArr. 
-    // // Creates UL to house individual ingredients
-    // var ingArr = element.ingredients.split('|');
-    // console.log(ingArr)
-    // var ingUL = document.createElement('ul');
+//     // Splits ingredient string at "|" and returns array called ingArr. 
+//     // Creates UL to house individual ingredients
+//     var ingArr = element.ingredients.split('|');
+//     console.log(ingArr)
+//     var ingUL = document.createElement('ul');
 
-    // // Loops ingredient list and creates li for each ingredient and appends to ul
-    // for (let i = 0; i < ingArr.length; i++) {
-    //     var ingList = document.createElement('li');
-    //     ingList.textContent = ingArr[i];
-    //     ingUL.append(ingList);
+//     // Loops ingredient list and creates li for each ingredient and appends to ul
+//     for (let i = 0; i < ingArr.length; i++) {
+//         var ingList = document.createElement('li');
+//         ingList.textContent = ingArr[i];
+//         ingUL.append(ingList);
 //     resultCard.append(ingUL);
 //     // Appends all created elements in card to parent container
 //     recipeContainer.append(resultCard);
