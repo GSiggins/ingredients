@@ -12,6 +12,24 @@
     z-index: 4;
 }
 
+.favorites-nav {
+    font-family: 'Josefin Sans', sans-serif;
+    color: bisque;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color:#686e43;
+    z-index: 4;
+}
+
+html {
+    scroll-behavior: smooth;   
+}
+
 ul {
     list-style: none;
     display: flex;
@@ -23,7 +41,17 @@ li {
     font-size: 25px;
 }
 
+#link {
+    color: bisque;
+    text-decoration: none;
+}
+
 .landing-nav .logo {
+    font-size: 60px;
+    text-shadow: 4px 4px 8px #323232;
+}
+
+.favorites-nav .logo {
     font-size: 60px;
     text-shadow: 4px 4px 8px #323232;
 }
@@ -83,6 +111,10 @@ li {
 }
 
 .landing-body {
+    background-color: #686e43;
+}
+
+.favorites-body {
     background-color: #686e43;
 }
 
@@ -242,9 +274,12 @@ li {
   }
   }
   
-.landing-ul li:hover{
+#link:hover{
     text-shadow: 4px 4px 8px #323232;
+    text-decoration: none;
 }
+
+
 .recipe-card:hover {
     background-color: bisque;
 }
