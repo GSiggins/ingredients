@@ -210,6 +210,19 @@ searchBtn.addEventListener('click', searchClick);
 searchBtn.addEventListener('click', saveFavorites);
 resultsContainer.addEventListener('click', recipeShow);
 
+
+const input = document.querySelector('.search-input')
+//const btnSearchEl = document.getElementById('btnSearch')
+if (input) {
+input.addEventListener('keydown', (event) => {
+  if (event.key === "Enter") {
+    searchBtn.click()
+  }
+})}
+
+
+// leave alone 
+
 // resultArray.forEach(element => {
 
 //     // Creates master div to house children
