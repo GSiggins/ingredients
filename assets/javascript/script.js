@@ -210,7 +210,12 @@ function recipeShow(event) {
 
 function recentSearches() {
    var retrievedSearches = localStorage.getItem("favorites");
-   console.log(retrievedSearches);  
+   console.log(retrievedSearches);
+
+   if (retrievedSearches != null) {
+    document.getElementById("display-recent-searches").innerHTML = JSON.parse(localStorage.getItem("favorites"));
+   }
+
 
 }
 
