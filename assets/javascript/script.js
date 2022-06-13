@@ -2,6 +2,7 @@ var searchBtn = document.querySelector('.search-btn')
 var landingSearch = document.getElementById('landing-search')
 var resultsSearch = document.getElementById('results-search')
 var resultsContainer = document.querySelector('.results-container');
+var favoritesBtn = document.querySelector('.favorites-btn')
 
 const recipeApi = {
     method: 'GET',
@@ -206,6 +207,16 @@ function recipeShow(event) {
     // var recipeContainer = document.querySelector('.recipe-container')
 }
 
+
+function recentSearches() {
+   var retrievedSearches = localStorage.getItem("favorites");
+   console.log(retrievedSearches);  
+
+}
+
+
+
+favoritesBtn.addEventListener('click', recentSearches);
 searchBtn.addEventListener('click', searchClick);
 searchBtn.addEventListener('click', saveFavorites);
 resultsContainer.addEventListener('click', recipeShow);
