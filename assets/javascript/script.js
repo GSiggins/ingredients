@@ -159,6 +159,7 @@ function displayResult(resultArray) {
 }
 
 function recipeShow(event) {
+    // Ensures click target is a recipe card, then shows the modal
     if (event.target.matches(".recipe-card")) {
         console.log(event.target);
         chosenRecipe = event.target;
@@ -169,40 +170,46 @@ function recipeShow(event) {
         nutritionModalPop(nutritionData);
     }
 
+    // Selects elements out of the clicked recipe and gives them variables
     var recipeTitle = chosenRecipe.querySelector('#title-header');
     var recipeServings = chosenRecipe.querySelector('#servings-header');
     var recipeDes = chosenRecipe.querySelector('#recipe-description');
-    var recipeIng = chosenRecipe.querySelector('#ing-list');
-    var listItems = recipeIng.getElementsByTagName('li');
-    for (let i = 0; i < listItems.length; i++) {
-        console.log(listItems[i]);
-    }
+
+    // Gives variables to the text content of the querySelected HTML elements
     var chosenTitle = recipeTitle.textContent;
     var chosenServings = recipeServings.textContent;
-    var chosenIng = recipeIng.textContent;
+    var chosenIng = recipeIng.innerHTML;
     var chosenDes = recipeDes.textContent;
 
+    // Creates h3 for title within modal, sets text, and appends.
     var modalTitle = document.createElement('h3');
     modalTitle.textContent = chosenTitle;
     modal.append(modalTitle);
 
-    // Creates H4 for Serving sizes within card, sets text, and appends
+    // Creates H4 for Serving sizes within modal, sets text, and appends.
     var modalServings = document.createElement('h4');
     modalServings.textContent = chosenServings;
     modal.append(modalServings);
 
-    // Creates H4 for title within card, sets text, and appends
-    var modalIng = document.createElement('h4');
-    modalIng.textContent = chosenIng;
+    // Creates H4 for title within modal, sets text, and appends
+    var modalIng = document.createElement('ul');
+    modalIng.setAttribute("id", "ingredients-ul");
+    let recipeIng = chosenRecipe.getElementById('indredients-ul');
+    modalIng.innerHTML = chosenIng;
     modal.append(modalIng);
+    modalIng.append(ingListItems);
 
+    // Creates h4 for instructions within modal, sets text, and appends. 
     var modalInst = document.createElement('h4');
-    modalInst.textContent = chosenDes;
+    modalInst.textContent = " Instructions: " + chosenDes;
     modal.append(modalInst);
 }
 
+// Handles populating the nutritional data within the modal
 function nutritionModalPop(data) {
     console.log(data);
+
+    // Creates h3 element th
     var nutritionTitle = document.createElement('h3');
     nutritionTitle.textContent = 'Nutrition info: ';
     delete data[0].name;

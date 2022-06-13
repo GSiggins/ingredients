@@ -225,7 +225,7 @@ li {
     left: 0;
     right: 0;
     z-index: 100;
-    box-shadow: 0 0 100px 500px rgba(0, 0, 0, 0.576);
+    box-shadow: 0 0 100px 1000px rgba(0, 0, 0, 0.576);
     border-radius: 10px;
 }
 
