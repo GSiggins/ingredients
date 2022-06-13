@@ -3,6 +3,7 @@ var landingSearch = document.getElementById('landing-search')
 var resultsSearch = document.getElementById('results-search')
 var resultsContainer = document.querySelector('.results-container');
 var favoritesBtn = document.querySelector('.favorites-btn')
+var modal = document.querySelector('#modal')
 
 const recipeApi = {
     method: 'GET',
@@ -79,7 +80,8 @@ function nutritionQuery(nutritionString) {
         })
         .then(function (data) {
             console.log(data);
-            nutritionData = data;
+            let nutritionData = data;
+            nutritionModalPop(nutritionData);
         })
 }
 
@@ -129,6 +131,7 @@ function displayResult(resultArray) {
         var ingArr = element.ingredients.split('|');
         console.log(ingArr)
         var ingUL = document.createElement('ul');
+        ingUL.setAttribute('id', 'recipe-card-ul')
 
         // Loops ingredient list and creates li for each ingredient and appends to ul
         for (let i = 0; i < ingArr.length; i++) {
@@ -136,6 +139,7 @@ function displayResult(resultArray) {
             ingList.textContent = ingArr[i];
             ingUL.append(ingList);
         }
+        
 
         // Appends the ul to the result card
         resultCard.append(ingUL);
@@ -158,6 +162,7 @@ function displayResult(resultArray) {
 
 function recipeShow(event) {
     // Ensures click target is a recipe card, then shows the modal
+    let chosenRecipe;
     if (event.target.matches(".recipe-card")) {
         console.log(event.target);
         chosenRecipe = event.target;
@@ -165,18 +170,18 @@ function recipeShow(event) {
         var recipeModal = document.createElement('div');
         recipeModal.setAttribute('id', 'recipe-modal')
         modal.append(recipeModal);
-        nutritionModalPop(nutritionData);
     }
 
     // Selects elements out of the clicked recipe and gives them variables
     var recipeTitle = chosenRecipe.querySelector('#title-header');
     var recipeServings = chosenRecipe.querySelector('#servings-header');
     var recipeDes = chosenRecipe.querySelector('#recipe-description');
+    var recipeIngList = (chosenRecipe.querySelectorAll('li'))
 
     // Gives variables to the text content of the querySelected HTML elements
     var chosenTitle = recipeTitle.textContent;
     var chosenServings = recipeServings.textContent;
-    var chosenIng = recipeIng.innerHTML;
+    // var chosenIng = recipeIng.innerHTML;
     var chosenDes = recipeDes.textContent;
 
     // Creates h3 for title within modal, sets text, and appends.
@@ -188,14 +193,16 @@ function recipeShow(event) {
     var modalServings = document.createElement('h4');
     modalServings.textContent = chosenServings;
     modal.append(modalServings);
-
     // Creates H4 for title within modal, sets text, and appends
     var modalIng = document.createElement('ul');
     modalIng.setAttribute("id", "ingredients-ul");
-    let recipeIng = chosenRecipe.getElementById('indredients-ul');
-    modalIng.innerHTML = chosenIng;
     modal.append(modalIng);
-    modalIng.append(ingListItems);
+
+    for (let i = 0; i < recipeIngList.length; i++) {
+        const lineItem = recipeIngList[i];
+        modalIng.append(lineItem);
+    }
+   
 
     // Creates h4 for instructions within modal, sets text, and appends. 
     var modalInst = document.createElement('h4');
@@ -207,10 +214,14 @@ function recipeShow(event) {
 function nutritionModalPop(data) {
     console.log(data);
 
-    // Creates h3 element th
+    // Creates h3 element that holds nutrition info title
     var nutritionTitle = document.createElement('h3');
     nutritionTitle.textContent = 'Nutrition info: ';
+
+    //deletes name property in object so as not to be redundant
     delete data[0].name;
+
+    // gives id and appends to modal body
     nutritionTitle.setAttribute('id', 'nutrition-title')
     console.log(nutritionTitle);
     modal.append(nutritionTitle);
