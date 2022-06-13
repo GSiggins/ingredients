@@ -204,18 +204,21 @@ function recipeShow(event) {
 function nutritionModalPop(data) {
     console.log(data);
     var nutritionTitle = document.createElement('h3');
-    nutritionTitle.textContent = data[0].name;
+    nutritionTitle.textContent = 'Nutrition info: ';
+    delete data[0].name;
+    nutritionTitle.setAttribute('id', 'nutrition-title')
     console.log(nutritionTitle);
     modal.append(nutritionTitle);
 
     var nutritionUL = document.createElement('ul');
+    nutritionUL.setAttribute('id', 'nutrition-ul')
     nutritionTitle.append(nutritionUL);
 
 
     for (let key in data[0]) {
         console.log(key + ": ", data[0][key]);
         var lineItem = document.createElement('li');
-        var nutritionItem = (key + ":" + data[0][key]);
+        var nutritionItem = (key + ": " + data[0][key]);
         lineItem.textContent = nutritionItem;
         nutritionUL.append(lineItem);
     }
