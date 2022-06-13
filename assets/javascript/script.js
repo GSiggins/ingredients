@@ -2,9 +2,7 @@ var searchBtn = document.querySelector('.search-btn')
 var landingSearch = document.getElementById('landing-search')
 var resultsSearch = document.getElementById('results-search')
 var resultsContainer = document.querySelector('.results-container');
-var modal = document.querySelector('#modal');
-var nutritionData = ''
-
+var favoritesBtn = document.querySelector('.favorites-btn')
 
 const recipeApi = {
     method: 'GET',
@@ -224,6 +222,21 @@ function nutritionModalPop(data) {
     }
 }
 
+
+function recentSearches() {
+   var retrievedSearches = localStorage.getItem("favorites");
+   console.log(retrievedSearches);
+
+   if (retrievedSearches != null) {
+    document.getElementById("recents").innerHTML = JSON.parse(localStorage.getItem("favorites"));
+   }
+
+
+}
+
+
+
+searchBtn.addEventListener('click', recentSearches);
 searchBtn.addEventListener('click', searchClick);
 searchBtn.addEventListener('click', saveFavorites);
 resultsContainer.addEventListener('click', recipeShow);
