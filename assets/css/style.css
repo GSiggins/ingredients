@@ -194,7 +194,7 @@ li {
     left: 0;
     right: 0;
     z-index: 100;
-    box-shadow: 0 0 100px 1000px rgba(0, 0, 0, 0.576);
+    box-shadow: 0 0 1000px 1000px rgba(0, 0, 0, 0.576);
     border-radius: 10px;
 }
 
@@ -261,3 +261,8 @@ a {
     display:none;
   }
 
+#recents {
+    font-family: 'Josefin Sans', sans-serif;
+    color: bisque;
+    padding: 10px;
+}
