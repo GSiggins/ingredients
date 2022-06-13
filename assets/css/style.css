@@ -12,20 +12,6 @@
     z-index: 4;
 }
 
-.favorites-nav {
-    font-family: 'Josefin Sans', sans-serif;
-    color: bisque;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color:#686e43;
-    z-index: 4;
-}
-
 html {
     scroll-behavior: smooth;   
 }
@@ -47,11 +33,6 @@ li {
 }
 
 .landing-nav .logo {
-    font-size: 60px;
-    text-shadow: 4px 4px 8px #323232;
-}
-
-.favorites-nav .logo {
     font-size: 60px;
     text-shadow: 4px 4px 8px #323232;
 }
@@ -111,10 +92,6 @@ li {
 }
 
 .landing-body {
-    background-color: #686e43;
-}
-
-.favorites-body {
     background-color: #686e43;
 }
 
@@ -203,14 +180,6 @@ li {
     bottom: 0;
     height: 90vh;
     z-index: 2;
-}
-
-.chilaquiles {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 70%;
-    z-index: 1;
 }
 
 #modal {
