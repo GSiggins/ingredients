@@ -2,6 +2,9 @@ var searchBtn = document.querySelector('.search-btn')
 var landingSearch = document.getElementById('landing-search')
 var resultsSearch = document.getElementById('results-search')
 var resultsContainer = document.querySelector('.results-container');
+var modal = document.querySelector('#modal');
+var nutritionData = ''
+
 
 const recipeApi = {
     method: 'GET',
@@ -77,8 +80,8 @@ function nutritionQuery(nutritionString) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data)
-            //return one object
+            console.log(data);
+            nutritionData = data;
         })
 }
 
@@ -91,7 +94,7 @@ function saveFavorites() {
     // Store the string
     storedFavorites.push(favoritesText)
     // set the key as Favorites
-    localStorage.setItem('favorites',JSON.stringify(storedFavorites));
+    localStorage.setItem('favorites', JSON.stringify(storedFavorites));
     // Log local storage
     console.log(storedFavorites)
 }
@@ -102,7 +105,7 @@ function displayResult(resultArray) {
 
         // Creates master div to house children
         var resultCard = document.createElement('div');
- 
+
         // Creates H3 for title within card, sets text, and appends
         var title = document.createElement('h3');
         console.log(element.title);
@@ -150,20 +153,20 @@ function displayResult(resultArray) {
         resultCard.className = 'recipe-card'
         var recipeCard = document.querySelector('.recipe-card');
         // Adds eventListener for each recipe card
-       
+
     })
- 
+
 }
 
 function recipeShow(event) {
-    if (event.target.matches(".recipe-card")){
+    if (event.target.matches(".recipe-card")) {
         console.log(event.target);
         chosenRecipe = event.target;
-        var modal = document.querySelector('#modal');
         modal.className = ('show');
         var recipeModal = document.createElement('div');
-        recipeModal.setAttribute('id','recipe-modal')
+        recipeModal.setAttribute('id', 'recipe-modal')
         modal.append(recipeModal);
+        nutritionModalPop(nutritionData);
     }
 
     var recipeTitle = chosenRecipe.querySelector('#title-header');
@@ -172,7 +175,7 @@ function recipeShow(event) {
     var recipeIng = chosenRecipe.querySelector('#ing-list');
     var listItems = recipeIng.getElementsByTagName('li');
     for (let i = 0; i < listItems.length; i++) {
-        console.log (listItems[i]);
+        console.log(listItems[i]);
     }
     var chosenTitle = recipeTitle.textContent;
     var chosenServings = recipeServings.textContent;
@@ -196,99 +199,41 @@ function recipeShow(event) {
     var modalInst = document.createElement('h4');
     modalInst.textContent = chosenDes;
     modal.append(modalInst);
+}
 
-    
-   
-        
-    // Loop through the NodeList object.
+function nutritionModalPop(data) {
+    console.log(data);
+    var nutritionTitle = document.createElement('h3');
+    nutritionTitle.textContent = data[0].name;
+    console.log(nutritionTitle);
+    modal.append(nutritionTitle);
 
-    // document.location = "./recipe-page.html"
-    // var recipeContainer = document.querySelector('.recipe-container')
+    var nutritionUL = document.createElement('ul');
+    nutritionTitle.append(nutritionUL);
+
+
+    for (let key in data[0]) {
+        console.log(key + ": ", data[0][key]);
+        var lineItem = document.createElement('li');
+        var nutritionItem = (key + ":" + data[0][key]);
+        lineItem.textContent = nutritionItem;
+        nutritionUL.append(lineItem);
+    }
 }
 
 searchBtn.addEventListener('click', searchClick);
 searchBtn.addEventListener('click', saveFavorites);
 resultsContainer.addEventListener('click', recipeShow);
 
-// resultArray.forEach(element => {
-
-//     // Creates master div to house children
-//     var recipeDiv = document.createElement('div');
-
-//     // Creates H3 for title within card, sets text, and appends
-//     var title = document.createElement('h3');
-//     console.log(element.title);
-//     title.textContent = element.title;
-//     recipeDiv.append(title);
-
-//     // Creates H4 for Serving sizes within card, sets text, and appends
-//     var servings = document.createElement('h4');
-//     servings.textContent = element.servings;
-//     recipeDiv.append(servings);
-
-//     // Creates H4 for title within card, sets text, and appends
-//     var ingHeader = document.createElement('h4');
-//     ingHeader.textContent = "Ingredients: "
-//     recipeDiv.append(ingHeader);
-
-//     // Splits ingredient string at "|" and returns array called ingArr. 
-//     // Creates UL to house individual ingredients
-//     var ingArr = element.ingredients.split('|');
-//     console.log(ingArr)
-//     var ingUL = document.createElement('ul');
-
-//     // Loops ingredient list and creates li for each ingredient and appends to ul
-//     for (let i = 0; i < ingArr.length; i++) {
-//         var ingList = document.createElement('li');
-//         ingList.textContent = ingArr[i];
-//         ingUL.append(ingList);
-//     resultCard.append(ingUL);
-//     // Appends all created elements in card to parent container
-//     recipeContainer.append(resultCard);
-// })
-// }
+const input = document.querySelector('.search-input')
+//const btnSearchEl = document.getElementById('btnSearch')
+if (input) {
+input.addEventListener('keydown', (event) => {
+  if (event.key === "Enter") {
+    searchBtn.click()
+  }
+})}
 
 
+// leave alone 
 
-
-
-   
-   
-   
-   
-   
-   
-    
-   
-    
-    
-    
-    
-
-
-
-// function displayRecipeResults(recipeArray) {
-
-//     // create HTML elements with cards to show recipe info w/ first 5 ingredients
-//     // populate cards with info from object array
-//     // add event listeners to both recipe buttons
-//     // add button for "start cooking!" and one for "favorite this recipe"
-
-// }
-
-
-// function recipeInfo(chosenRecipe) {
-
-//     // display recipe from chosen recipe
-//     // display sliced ingredient list
-// }
-
-
-// function nutritionInfo(chosenRecipeNut) {
-
-//     // display nutritional info from chosen recipe
-//     // populate HTML with corresponding info
-
-// }
-
-// search button event listener
