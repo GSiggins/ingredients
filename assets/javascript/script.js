@@ -90,7 +90,7 @@ function saveFavorites() {
     // Set variable for favorites and throw it into and array 
     var storedFavorites = JSON.parse(localStorage.getItem("favorites")) || []
     // Get string from search input field   
-    var favoritesText = document.querySelector('.search-input').value.trim();
+    var favoritesText = ' ' + document.querySelector('.search-input').value;
     // Store the string
     storedFavorites.push(favoritesText)
     // set the key as Favorites
