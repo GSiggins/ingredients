@@ -272,6 +272,11 @@ input.addEventListener('keydown', (event) => {
   }
 })}
 
+var closeBtn = document.querySelector('.close')
+closeBtn.addEventListener('click', closeModal)
 
-// leave alone 
+function closeModal () {
+    modal.className = ('hide');
+}
+
 
