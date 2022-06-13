@@ -30,11 +30,6 @@
       <navbar>
         <ul class="landing-ul">
           <li><a class="home-btn" id="link" href="#landing-body">Home</a></li>
-          <li>|</li>
-          <li>
-            <a class="favorites-btn" id="link" href="favorites.html"
-              >Recent Searches</a
-            >
           </li>
         </ul>
       </navbar>
@@ -42,8 +37,13 @@
 
     <div class="results-container"></div>
 
-    <div id="modal" class="hide"></div>
+    <div id="modal" class="hide">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
 
+  <div class="hero-container">
     <div class="main-search-input-wrap">
       <div class="main-search-input fl-wrap">
         <div class="main-search-input-item">
@@ -54,15 +54,18 @@
             placeholder="Search Recipes..."
           />
         </div>
-
         <button class="main-search-button search-btn">Search</button>
       </div>
     </div>
-
-    <h3 id="recents"></h3>
-
-    <div class="results-container"></div>
    
+    <div class="recents-cont">
+      <h3>Recent Searches:</h3>
+        <ul id="recents"></ul>
+    </div>
+     <div class="results-container"></div>
+    </div>
+  </div>
+
 
     <img
       class="chickysammy"
