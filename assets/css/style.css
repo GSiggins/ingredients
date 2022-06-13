@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     background-color:#686e43;
@@ -27,6 +27,10 @@ li {
     font-size: 25px;
 }
 
+pre {
+    font-family: 'Crimson Text', serif;
+}
+
 #link {
     color: bisque;
     text-decoration: none;
@@ -39,12 +43,10 @@ li {
 
 .results-container {
     font-family: 'Crimson Text', serif;
-    position: absolute;
-    top: 10px;
     margin: 50px;
     justify-content: center;
     padding: 30px;
-    margin-top: 450px;
+    margin-top: 470px;
     z-index: 3;
     display: flex;
     flex-direction: row;
@@ -102,14 +104,12 @@ li {
 .main-search-input {
     font-family: 'Josefin Sans', sans-serif;
     background: #fff;
-    padding: 0 120px 0 0;
     border-radius: 1px;
-    margin-top: 120px;
     box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.3);
     width: 80%;
     position: sticky;
-    top: 125px;
     z-index: 3;
+    margin: auto;
 }
   
 .fl-wrap {
@@ -119,7 +119,6 @@ li {
 }
   
 .main-search-input:before {
-    content: '';
     position: absolute;
     bottom: -40px;
     width: 50px;
@@ -172,6 +171,8 @@ li {
     max-width: 700px;
     margin: 20px auto;
     position: relative;
+    margin: 0 auto;
+    width: 700px;
 }
 
 .chickysammy {
@@ -196,6 +197,14 @@ li {
     z-index: 100;
     box-shadow: 0 0 1000px 1000px rgba(0, 0, 0, 0.618);
     border-radius: 10px;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
 }
 
 #modal h3,div,li,h4 {
@@ -259,18 +268,25 @@ li {
 
 a {
     color: white;
-  }
+}
   
-  #recipe-description {
+#recipe-description {
     display:none;
-  }
-
-#recents {
-    font-family: 'Josefin Sans', sans-serif;
-    color: bisque;
-    padding: 10px;
 }
 
-.close {
-    margin-bottom: 50px;
+.recents-cont {
+    font-family: 'Crimson Text', serif;
+    padding: 10px;
+    background-color: bisque;
+    color: black;
+    border: dashed 6px #873b21;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 50px auto;
+    z-index: 3;
+    text-align: center;
+}
+
+.recents-cont h3 {
+    padding-bottom: 7px;
 }
