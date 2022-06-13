@@ -162,7 +162,9 @@ function displayResult(resultArray) {
 
 function recipeShow(event) {
     // Ensures click target is a recipe card, then shows the modal
+
     let chosenRecipe;
+
     if (event.target.matches(".recipe-card")) {
         console.log(event.target);
         chosenRecipe = event.target;
@@ -176,7 +178,9 @@ function recipeShow(event) {
     var recipeTitle = chosenRecipe.querySelector('#title-header');
     var recipeServings = chosenRecipe.querySelector('#servings-header');
     var recipeDes = chosenRecipe.querySelector('#recipe-description');
+
     var recipeIngList = (chosenRecipe.querySelectorAll('li'))
+
 
     // Gives variables to the text content of the querySelected HTML elements
     var chosenTitle = recipeTitle.textContent;
@@ -193,6 +197,7 @@ function recipeShow(event) {
     var modalServings = document.createElement('h4');
     modalServings.textContent = chosenServings;
     modal.append(modalServings);
+
     // Creates H4 for title within modal, sets text, and appends
     var modalIng = document.createElement('ul');
     modalIng.setAttribute("id", "ingredients-ul");
@@ -203,7 +208,6 @@ function recipeShow(event) {
         modalIng.append(lineItem);
     }
    
-
     // Creates h4 for instructions within modal, sets text, and appends. 
     var modalInst = document.createElement('h4');
     modalInst.textContent = " Instructions: " + chosenDes;
