@@ -228,7 +228,7 @@ function recentSearches() {
    console.log(retrievedSearches);
 
    if (retrievedSearches != null) {
-    document.getElementById("display-recent-searches").innerHTML = JSON.parse(localStorage.getItem("favorites"));
+    document.getElementById("recents").innerHTML = JSON.parse(localStorage.getItem("favorites"));
    }
 
 
@@ -236,7 +236,7 @@ function recentSearches() {
 
 
 
-favoritesBtn.addEventListener('click', recentSearches);
+searchBtn.addEventListener('click', recentSearches);
 searchBtn.addEventListener('click', searchClick);
 searchBtn.addEventListener('click', saveFavorites);
 resultsContainer.addEventListener('click', recipeShow);
