@@ -26,11 +26,9 @@ The second API is called Nutrition by API-Ninjas, this API grabs the nutritional
 ## How to Access
 
 - Live: https://gsiggins.github.io/ingredients/
-
 - Repository: https://github.com/GSiggins/ingredients
 
 ## Visual Overview of Web Application
 
 ![img](./assets/images/landing.png)
 
-Repository contains a quality README file with description, screenshot, and link to deployed application
