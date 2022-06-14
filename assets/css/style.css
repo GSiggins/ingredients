@@ -1,3 +1,20 @@
+html {
+    scroll-behavior: smooth;   
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    display: grid;
+    gap: 1px;
+}
+
+li {
+    padding: 20px;
+    font-size: 25px;
+}
+
 .landing-nav {
     font-family: 'Josefin Sans', sans-serif;
     color: bisque;
@@ -12,94 +29,23 @@
     z-index: 5;
 }
 
-html {
-    scroll-behavior: smooth;   
-}
-
-ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-}
-
-li {
-    padding: 20px;
-    font-size: 25px;
-}
-
-pre {
-    font-family: 'Crimson Text', serif;
-}
-
-#link {
-    color: bisque;
-    text-decoration: none;
-}
-
 .landing-nav .logo {
     font-size: 60px;
     text-shadow: 4px 4px 8px #323232;
-}
-
-.results-container {
-    font-family: 'Crimson Text', serif;
-    justify-content: center;
-    padding: 15px;
-    z-index: 3;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-height: 80%;
-}
-
-#recipe-modal {
-    margin: 30px;
-}
-
-.recipe-card {
-    background-color: bisque;
-    border: dashed 6px #873b21;
-    padding: 15px;
-    margin: 30px;
-    flex: 1 1 400px;
-    border-radius: 10px;
-}
-
-.results-container h3 {
-    font-size: 35px;
-    font-weight: bolder;
-    margin: 20px auto;
-    text-decoration: underline;
-    pointer-events: none;
-    text-align: center;
-}
-
-.results-container h4 {
-    font-size: 20px;
-    pointer-events: none;
-}
-
-.results-container ul {
-    display: flex;
-    flex-direction: column;
-    pointer-events: none;
-}
-
-.results-container li {
-    font-size: 17px;
-    line-height: 1;
-    list-style: square;
-    pointer-events: none;
 }
 
 .landing-body {
     background-color: #686e43;
 }
 
-.ing-header {
-    text-decoration: underline;
+.chickysammy {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 90vh;
+    z-index: 2;
 }
-  
+
 .main-search-input {
     font-family: 'Josefin Sans', sans-serif;
     background: #fff;
@@ -175,12 +121,108 @@ pre {
     width: 700px;
 }
 
-.chickysammy {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 90vh;
-    z-index: 2;
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    padding-top: 70px;
+}
+
+.results-container {
+    font-family: 'Crimson Text', serif;
+    justify-content: center;
+    padding: 15px;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 80%;
+}
+
+.recents-cont {
+    font-family: 'Crimson Text', serif;
+    padding: 10px;
+    background-color: bisque;
+    color: black;
+    border: dashed 6px #873b21;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 50px auto;
+    z-index: 3;
+    text-align: center;
+}
+
+.recipe-card {
+    background-color: bisque;
+    border: dashed 6px #873b21;
+    padding: 15px;
+    margin: 30px;
+    flex: 1 1 400px;
+    border-radius: 10px;
+}
+
+.results-container h3 {
+    font-size: 35px;
+    font-weight: bolder;
+    margin: 20px auto;
+    text-decoration: underline;
+    pointer-events: none;
+    text-align: center;
+}
+
+.results-container h4 {
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.results-container ul {
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.results-container li {
+    font-size: 17px;
+    line-height: 1;
+    list-style: square;
+    pointer-events: none;
+}
+
+.ing-header {
+    text-decoration: underline;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+  
+  :focus {
+      outline: 0;
+  }
+  
+  .recipe-description {
+    display: none;
+  }
+
+
+.recipe-card:hover {
+    background-color: bisque;
+} 
+
+#link {
+    color: bisque;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+#recipe-description {
+    display:none;
 }
 
 #modal {
@@ -202,20 +244,6 @@ pre {
     max-height: 100vh;
     overflow-y: auto;
 } 
-
-ul {
-    display: grid;
-    gap: 1px;
-  }
-
-.hero-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    padding-top: 70px;
-}
 
 #modal h4 {
     font-size: 15px;
@@ -239,6 +267,10 @@ ul {
     line-height: 0;
 }
 
+#recipe-modal {
+    margin: 30px;
+}
+
 #recipe-modal h3 {
     font-size: 20px;
     font-weight: bolder;
@@ -256,79 +288,36 @@ ul {
     line-height: 1;
 }
 
-.hide{
-    display: none;
-}
-
-.show{
-    display: block;
-}
-  
-  :focus {
-      outline: 0;
-  }
-  
-  .recipe-description {
-    display: none;
-  }
-
-  @media only screen and (max-width: 768px) {
-  .main-search-input {
-      background: rgba(255,255,255,0.2);
-      padding: 14px 20px 10px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.0);
-  }
-  
-  .main-search-input-item {
-      width: 100%;
-      border: 1px solid #eee;
-      height: 50px;
-      border: none;
-      margin-bottom: 10px;
-  }
-  
-  .main-search-input-item input {
-      border-radius: 6px !important;
-      background: #fff;
-  }
-  
-  .main-search-button {
-      position: relative;
-      float: left;
-      width: 100%;
-      border-radius: 6px;
-  }
-  }
-  
 #link:hover{
     text-shadow: 4px 4px 8px #323232;
     text-decoration: none;
 }
 
-
-.recipe-card:hover {
-    background-color: bisque;
-}
-
-#link {
-    color: bisque;
-    font-size: 25px;
-}
-  
-#recipe-description {
-    display:none;
-}
-
-.recents-cont {
-    font-family: 'Crimson Text', serif;
-    padding: 10px;
-    background-color: bisque;
-    color: black;
-    border: dashed 6px #873b21;
-    border-radius: 10px;
-    max-width: 80%;
-    margin: 50px auto;
-    z-index: 3;
-    text-align: center;
-}
+@media only screen and (max-width: 768px) {
+    .main-search-input {
+        background: rgba(255,255,255,0.2);
+        padding: 14px 20px 10px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.0);
+    }
+    
+    .main-search-input-item {
+        width: 100%;
+        border: 1px solid #eee;
+        height: 50px;
+        border: none;
+        margin-bottom: 10px;
+    }
+    
+    .main-search-input-item input {
+        border-radius: 6px !important;
+        background: #fff;
+    }
+    
+    .main-search-button {
+        position: relative;
+        float: left;
+        width: 100%;
+        border-radius: 6px;
+    }
+    }
