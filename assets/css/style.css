@@ -5,11 +5,11 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     background-color:#686e43;
-    z-index: 4;
+    z-index: 5;
 }
 
 html {
@@ -109,6 +109,7 @@ pre {
     position: sticky;
     z-index: 3;
     margin: auto;
+    margin-top: 200px;
 }
   
 .fl-wrap {
@@ -183,6 +184,7 @@ pre {
 }
 
 #modal {
+    font-family: 'Crimson Text', serif;
     background-color: bisque;
     border: dashed 6px #873b21;
     padding: 15px;
@@ -215,6 +217,10 @@ ul {
     padding-top: 200px;
 }
 
+#modal h4 {
+    font-size: 15px;
+}
+
 #nutrition-title h3 {
     font-size: 20px;
     font-weight: bolder;
@@ -229,7 +235,7 @@ ul {
 }
 
 #nutrition-ul li {
-    font-size: 12px;
+    font-size: 15px;
     line-height: 0;
 }
 
