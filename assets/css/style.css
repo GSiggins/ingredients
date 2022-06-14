@@ -43,14 +43,13 @@ pre {
 
 .results-container {
     font-family: 'Crimson Text', serif;
-    margin: 50px;
     justify-content: center;
-    padding: 30px;
-    margin-top: 470px;
+    padding: 15px;
     z-index: 3;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    max-height: 80%;
 }
 
 #recipe-modal {
@@ -189,7 +188,8 @@ pre {
     padding: 15px;
     width: 80%;
     position: fixed;
-    top: 200px;
+    top: 50px;
+    bottom: 50px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -197,7 +197,14 @@ pre {
     z-index: 100;
     box-shadow: 0 0 1000px 1000px rgba(0, 0, 0, 0.618);
     border-radius: 10px;
-}
+    max-height: 100vh;
+    overflow-y: auto;
+} 
+
+ul {
+    display: grid;
+    gap: 1px;
+  }
 
 .hero-container {
     display: flex;
@@ -205,10 +212,42 @@ pre {
     justify-content: center;
     width: 100%;
     height: 100vh;
+    padding-top: 200px;
 }
 
-#modal h3,div,li,h4 {
+#nutrition-title h3 {
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+#nutrition-ul {
+    display: flex;
+    flex-direction: inline-block;
+    flex-wrap: wrap;
+    text-decoration: none;
+}
+
+#nutrition-ul li {
+    font-size: 12px;
+    line-height: 0;
+}
+
+#recipe-modal h3 {
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+#ingredients-ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#ingredients-ul li{
     font-size: 15px;
+    list-style: square;
+    line-height: 1;
 }
 
 .hide{
@@ -266,8 +305,9 @@ pre {
     background-color: bisque;
 }
 
-a {
-    color: white;
+#link {
+    color: bisque;
+    font-size: 25px;
 }
   
 #recipe-description {
@@ -285,8 +325,4 @@ a {
     margin: 50px auto;
     z-index: 3;
     text-align: center;
-}
-
-.recents-cont h3 {
-    padding-bottom: 7px;
 }
