@@ -22,8 +22,10 @@ Chef Buddy uses two APIs', the first one is called Recipe by API-Ninjas. The fir
 
 
 ## Landing Page 
-(.Assets/images/landing.png)
+![landing page](./assets/images/landing.png)
 
+## Links 
+- Repo Link: 
+https://github.com/GSiggins/ingredients
 
-
-Repository contains a quality README file with description, screenshot, and link to deployed application
+- Deployed Site:
