@@ -90,7 +90,7 @@ function saveFavorites() {
     // Set variable for favorites and throw it into and array 
     var storedFavorites = JSON.parse(localStorage.getItem("favorites")) || []
     // Get string from search input field   
-    var favoritesText = document.querySelector('.search-input').value.trim();
+    var favoritesText = ' ' + document.querySelector('.search-input').value;
     // Store the string
     storedFavorites.push(favoritesText)
     // set the key as Favorites
@@ -243,13 +243,16 @@ function nutritionModalPop(data) {
 
 
 function recentSearches() {
-   var retrievedSearches = localStorage.getItem("favorites");
-   console.log(retrievedSearches);
-
-   if (retrievedSearches != null) {
-    document.getElementById("recents").innerHTML = JSON.parse(localStorage.getItem("favorites"));
-   }
-}
+    //gets array stored in favorites
+    var retrievedSearches = localStorage.getItem("favorites");
+    // If array is not empty run codeblock, parse array, slice the number of items we want, add it to HTML 
+    if (retrievedSearches != null) {
+     var newFavs = JSON.parse(localStorage.getItem("favorites"));
+     var testFavorites = newFavs.slice(0, 5)
+     document.getElementById("recents").innerHTML = testFavorites
+     console.log(testFavorites);
+    }
+ }
 
 searchBtn.addEventListener('click', recentSearches);
 searchBtn.addEventListener('click', searchClick);
