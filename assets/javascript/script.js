@@ -269,11 +269,11 @@ var closeBtn = document.querySelector('.close')
 closeBtn.addEventListener('click', closeModal)
 
 
-// function closeModal (event) {
-//     console.log(event.target);
-//     if (event.target !== modal);
-//     modal.className = ('hide');
-// }
+ function closeModal (event) {
+     console.log(event.target);
+     if (event.target !== modal);
+     modal.className = ('hide');
+ }
 
 // modal.addEventListener('click', closeModal)
 
