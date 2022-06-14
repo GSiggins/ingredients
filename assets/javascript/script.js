@@ -30,10 +30,10 @@ function searchClick(event) {
     console.log(searchBarInput)
     // build first url request
     var recipeString = 'https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=' + searchBarInput;
-    console.log(recipeString)
+
     // build second url request
     var nutritionString = 'https://nutrition-by-api-ninjas.p.rapidapi.com/v1/nutrition?query=' + searchBarInput;
-    console.log(nutritionString)
+ 
     // Call fetch functions
     recipeQuery(recipeString);
     nutritionQuery(nutritionString);
@@ -154,10 +154,7 @@ function displayResult(resultArray) {
         resultsContainer.append(resultCard);
         resultCard.className = 'recipe-card'
         var recipeCard = document.querySelector('.recipe-card');
-        // Adds eventListener for each recipe card
-
     })
-
 }
 
 function recipeShow(event) {
@@ -255,13 +252,7 @@ function recentSearches() {
      document.getElementById("recents").innerHTML = testFavorites
      console.log(testFavorites);
     }
- 
- 
  }
-   
-
-
-
 
 searchBtn.addEventListener('click', recentSearches);
 searchBtn.addEventListener('click', searchClick);
@@ -277,6 +268,17 @@ input.addEventListener('keydown', (event) => {
   }
 })}
 
+var closeBtn = document.querySelector('.close')
+closeBtn.addEventListener('click', closeModal)
 
-// leave alone 
+
+ function closeModal (event) {
+     console.log(event.target);
+     if (event.target !== modal);
+     modal.className = ('hide');
+ }
+
+// modal.addEventListener('click', closeModal)
+
+
 
