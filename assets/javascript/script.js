@@ -246,15 +246,20 @@ function nutritionModalPop(data) {
 
 
 function recentSearches() {
-   var retrievedSearches = localStorage.getItem("favorites");
-   console.log(retrievedSearches);
+    //gets array stored in favorites
+    var retrievedSearches = localStorage.getItem("favorites");
+    // If array is not empty run codeblock, parse array, slice the number of items we want, add it to HTML 
+    if (retrievedSearches != null) {
+     var newFavs = JSON.parse(localStorage.getItem("favorites"));
+     var testFavorites = newFavs.slice(0, 5)
+     document.getElementById("recents").innerHTML = testFavorites
+     console.log(testFavorites);
+    }
+ 
+ 
+ }
+   
 
-   if (retrievedSearches != null) {
-    document.getElementById("recents").innerHTML = JSON.parse(localStorage.getItem("favorites"));
-   }
-
-
-}
 
 
 
